@@ -24,7 +24,7 @@ This guide will help you fork, clone, modify, and submit a **Pull Request (PR)**
 3. Open a terminal or Git Bash and run:  
 
    ```bash
-   git clone "https://github.com/RAj2027/DemoRepo.git"
+   git clone "https://github.com/RAj2027/ContributeToThisRepo.git"
    ```  
 4. Navigate into the cloned repository:  
    ```bash
