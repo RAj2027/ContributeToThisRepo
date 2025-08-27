@@ -17,17 +17,16 @@ body{
 .dabba{
     margin: 2vw;
     width: calc(100% - 4vw);
-    min-height: 70vh;
+    height: calc(100vh - 6vh);
     padding: 3rem;
     border-radius: 22px;
     background: linear-gradient(180deg, #fff6f6 0%, #fff 60%);
     box-shadow: 0 8px 30px rgba(33, 47, 61, 0.08);
     color: rgb(56, 56, 56);
-    /* grid layout for responsive cards */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.75rem;
-    align-items: center;
+    align-items: center;    
     justify-items: center;
 }
 
