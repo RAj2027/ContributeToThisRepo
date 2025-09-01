@@ -1,219 +1,145 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background: linear-gradient(180deg, #f6f9ff 0%, #fef6f7 100%);
+:root {
+    --font-color: rgb(34, 34, 34);
+    --bg-color: rgb(230, 200, 210);
+    --font-style: 'Funnel Display', sans-serif;
+}
+
+body {
+    background: white;
+    background-image:
+        linear-gradient(to right, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(71, 85, 105, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 50% 60%, rgba(236, 72, 153, 0.15) 0%, rgba(168, 85, 247, 0.05) 40%, transparent 70%);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    background-repeat: repeat, repeat, no-repeat;
     min-height: 100vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #444;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: var(--font-style);
 }
 
-.dabba{
-    margin: 2vw;
-    width: calc(100% - 4vw);
-    height: calc(100vh - 6vh);
-    padding: 3rem;
-    border-radius: 22px;
-    background: linear-gradient(180deg, #fff6f6 0%, #fff 60%);
-    box-shadow: 0 8px 30px rgba(33, 47, 61, 0.08);
-    color: rgb(56, 56, 56);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 7rem;
-    align-items: center;    
-    justify-items: center;
-}
-
-.box{
+.hero-section {
+    background-color: transparent;
     width: 100%;
-    max-width: 320px;
-    min-height: 160px;
-    background: linear-gradient(135deg, rgba(255,193,203,0.95) 0%, rgba(255,228,230,0.95) 100%);
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(179, 47, 79, 0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+    height: auto;
+    padding: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+}
+
+.content {
+    margin: 5vh 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+#heading {
+    font-family: var(--font-style);
+    font-size: 42px;
+}
+
+#sub {
+    font-size: 25px;
+    font-style: var(--font-style);
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cards-section {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vw;
+    padding: 0vw 3vw;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 400px;
+    height: 200px;
+    background: #ebe6e6;
+    background-color: whitesmoke;
+    border: 3px solid rgb(33, 33, 33);
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+    user-select: none;
+    display: flex;
+}
+
+.card:hover {
+    border: 3px solid rgb(33, 33, 33);
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.card-content {
+    padding: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    transition: transform 220ms cubic-bezier(.22,.9,.35,1), box-shadow 220ms ease, filter 220ms ease;
-    text-align: center;
-    color: #46323a;
+    gap: 1.2vh;
+    font-size: 18px;
+    color: rgb(17, 17, 17);
+    min-width: 0; /* allow children to shrink so ellipsis can appear */
 }
 
-.box:hover{
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 18px 40px rgba(96, 45, 71, 0.14);
-    filter: saturate(1.03);
-}
-
-.box .title{
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-}
-
-.box .subtitle{
-    font-size: 0.92rem;
-    color: rgba(70, 45, 55, 0.85);
-}
-
-/* responsive tweaks */
-@media (max-width: 640px){
-    .dabba{
-        padding: 1.25rem;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    }
-
-    .box{
-        padding: 1rem;
-        min-height: 140px;
-    }
-}
-
-/* -------- 3D card template styles (adapted) -------- */
-.parent{
-    width: 300px;
-    padding: 0.5rem;
-    perspective: 1000px;
-    /* ensure parents align nicely inside the grid */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card{
-    position: relative;
-    padding-top: 50px;
-    border: 3px solid #141414;
-    transform-style: preserve-3d;
-    background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
-        repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #141414 0 18.75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 0;
-    background-color: #141414;
-    width: 100%;
-    box-shadow: rgba(142, 142, 142, 0.28) 0px 30px 30px -10px;
-    transition: all 0.5s ease-in-out;
-    overflow: visible;
-}
-
-.card{
-    position: relative;
-    padding-top: 50px;
-    border: 3px solid #141414;
-    transform-style: preserve-3d;
-    transform-origin: center right;
-    background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
-        repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #141414 0 18.75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 0;
-    background-color: #141414;
-    width: 100%;
-    box-shadow: rgba(142, 142, 142, 0.28) 0px 30px 30px -10px;
-    transition: all 0.5s ease-in-out;
-    overflow: visible;
-}
-
-.card:hover{
-    background-position: -140px 140px, -140px 140px;
-    /* stronger tilt for a pronounced 3D feel */
-    transform: rotate3d(0.5, 1, 0, 20deg);
-}
-
-.content-box{
-    background: #8ed500;
-    transition: all 0.5s ease-in-out;
-    padding: 60px 25px 25px 25px;
-    transform-style: preserve-3d;
-    border-radius: 4px;
-}
-
-.content-box .card-title{
-    display: inline-block;
-    color: #141414;
+#name {
     font-size: 22px;
-    font-weight: 900;
-    transition: all 0.45s cubic-bezier(.22,.9,.35,1);
-    /* push further out for stronger parallax */
-    transform: translate3d(0px, 0px, 80px);
+    font-weight: bolder;
 }
 
-.content-box .card-title:hover{
-    transform: translate3d(0px, 0px, 110px);
+#resource {
+    font-weight: bolder;
+    margin-left: 20px;
 }
 
-.content-box .card-content{
-    margin-top: 10px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #141414;
-    transition: all 0.45s cubic-bezier(.22,.9,.35,1);
-    transform: translate3d(0px, 0px, 70px);
+#socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.content-box .card-content:hover{
-    transform: translate3d(0px, 0px, 110px);
+a {
+    
+    text-decoration: none;
 }
 
-.content-box .see-more{
-    cursor: pointer;
-    margin-top: 1rem;
-    display: inline-block;
-    font-weight: 900;
-    font-size: 9px;
-    text-transform: uppercase;
-    color: #8ed500;
-    background: #141414;
-    padding: 0.5rem 0.7rem;
-    transition: all 0.45s cubic-bezier(.22,.9,.35,1);
-    transform: translate3d(0px, 0px, 60px);
+button {
+    margin-top: 2vh;
+    margin: 1vw;
+    font-size: 1rem;
+    font-family: var(--font-style);
+    padding: 0.8em 1em;
+    background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+    border: 3px solid rgb(31, 31, 31);
+    border-radius: 1em;
+    color: #fff;
+    font-weight: bolder;
+    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+    box-shadow: -5px 5px 0px 0px rgb(30, 30, 30);
 }
 
-.content-box .see-more:hover{
-    transform: translate3d(0px, 0px, 110px);
-}
-
-.date-box{
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    height: 60px;
-    width: 60px;
-    background: #141414;
-    border: 1px solid #8ed500;
-    padding: 10px;
-    transform: translate3d(0px, 0px, 140px);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
-}
-
-.date-box span{
-    display: block;
-    text-align: center;
-}
-
-.date-box .month{
-    color: #8ed500;
-    font-size: 9px;
-    font-weight: 700;
-}
-
-.date-box .date{
-    font-size: 20px;
-    font-weight: 900;
-    color: #8ed500;
-}
-
-/* make sure the donated 3D card doesn't exceed grid spacing on small screens */
-@media (max-width: 420px){
-    .parent{ width: 100%; }
-    .card{ padding-top: 40px; }
-    .content-box{ padding: 40px 16px 16px 16px; }
+button:hover {
+    transform: translate(5px, -5px);
 }
