@@ -27,6 +27,7 @@ Follow these steps to contribute to **ContriSpace**:
   ```
 
 ### Step 3: Clone your Fork  
+- Copy the HTTPS URL from the **Code** dropdown at the top right of your forked repository.
 - Clone the repository to your local system:  
   ```bash
   git clone https://github.com/<your-username>/ContributeToThisRepo.git
@@ -58,15 +59,38 @@ git commit -m "Added my contributor card"
 ```bash
 git push origin main
 ```
+### Step 8: Open a Pull Request (PR)
 
-### Step 8: Done! 🎉  
-- Your contribution is now live on **ContriSpace** 🚀  
-- Refresh the site to see your contributor card!  
+1. Go to your **forked repo** on GitHub.  
+2. Click **Compare & Pull Request**.  
+3. Add a short description (e.g., *"Added my contributor card"*).  
+4. Submit the PR 🎉  
+
+### Step 9: Done! 🎉  
+- Your pull request will be reviewed and merged once any conflicts are resolved.
+- Your contribution will be published and visible on **ContriSpace** 🚀  
+- Refresh the site to see your contributor card! 
+---
+
+## 🎯 Contribution Rules  
+
+- Do not edit anything outside your card.  
+- Keep your card format consistent with the template.  
+- Make sure all your links are valid.  
+- Be respectful and inclusive ✨.  
 
 ---
+
 ## 📊 Project Stats
 
 ![Alt](https://repobeats.axiom.co/api/embed/69c2c215cd293f74ae0a5b1bfe0d3bb6472db223.svg "Repobeats analytics image") 
+
+## 🙌 Join the Community  
+
+By contributing here, you’re joining the **ContriSpace community** of first-time contributors 💖.  
+Let’s grow together 🚀   
+
+---
 
 ## 🌟 Show Some Love  
 If you like this project, don’t forget to **star ⭐ the repo** and share it with your friends!  
