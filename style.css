@@ -103,7 +103,7 @@ p {
     justify-content: center;
     gap: 1.2vh;
     font-size: 18px;
-    color: rgb(17, 17, 17);
+    color: var(--font-color);
     min-width: 0;
     /* allow children to shrink so ellipsis can appear */
 }
@@ -125,8 +125,19 @@ p {
 }
 
 a {
-
     text-decoration: none;
+    color: var(--font-color);
+}
+
+.links a {
+    color: var(--font-color);
+    transition: ease-in-out 0.3s;
+    text-decoration: none;
+}
+
+.links a:hover {
+    transform: scale(1.3);
+    color: #703895;
 }
 
 .button {
@@ -174,6 +185,11 @@ a {
 
 .ri-arrow-right-up-line {
     font-size: 50px;
+    transition: ease-in-out 0.3s;
+}
+
+.ri-arrow-right-up-line:hover {
+    transform: scale(1.2);
 }
 
 .right-sec {
