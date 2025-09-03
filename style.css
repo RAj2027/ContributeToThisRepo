@@ -6,7 +6,7 @@
 
 :root {
     --font-color: rgb(34, 34, 34);
-    --bg-color: rgb(230, 200, 210);
+    --bg-color: rgb(253, 253, 253);
     --font-style: 'Funnel Display', sans-serif;
 }
 
@@ -20,6 +20,7 @@ body {
     background-repeat: repeat, repeat, no-repeat;
     min-height: 100vh;
     font-family: var(--font-style);
+    padding: 2vw;
 }
 
 .hero-section {
@@ -44,11 +45,13 @@ body {
 #heading {
     font-family: var(--font-style);
     font-size: 42px;
+    text-align: center;
 }
 
 #sub {
     font-size: 25px;
     font-style: var(--font-style);
+    text-align: center;
 }
 
 p {
@@ -66,14 +69,14 @@ p {
     justify-content: center;
     gap: 3vw;
     padding: 0vw 3vw;
+    margin-bottom: 5vh;
 }
 
 .card {
     box-sizing: border-box;
     width: 400px;
     height: 200px;
-    background: #ebe6e6;
-    background-color: whitesmoke;
+    background-color: var(--bg-color);
     border: 3px solid rgb(33, 33, 33);
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -101,7 +104,8 @@ p {
     gap: 1.2vh;
     font-size: 18px;
     color: rgb(17, 17, 17);
-    min-width: 0; /* allow children to shrink so ellipsis can appear */
+    min-width: 0;
+    /* allow children to shrink so ellipsis can appear */
 }
 
 #name {
@@ -121,7 +125,7 @@ p {
 }
 
 a {
-    
+
     text-decoration: none;
 }
 
@@ -142,4 +146,49 @@ button {
 
 button:hover {
     transform: translate(5px, -5px);
+}
+
+.footer-section {
+    background-color: var(--bg-color);
+    height: auto;
+    padding: 2vw 3vw;
+    display: flex;
+    color: var(--font-color);
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid rgb(31, 31, 31);
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    margin: 0px 60px;
+    border-radius: 25px;
+}
+
+#logo {
+    color: var(--font-color);
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.logo {
+    display: flex;
+}
+
+.ri-arrow-right-up-line {
+    font-size: 50px;
+}
+
+.right-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    font-size: 18px;
+}
+
+.links {
+    display: flex;
+    gap: 1.5vw;
+    justify-content: end;
+}
+
+i {
+    font-size: 28px;
 }
