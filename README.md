@@ -1,77 +1,73 @@
-<div>
-   <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWF3ZmV3bTAwcTBnbGZ1ZHp5eXRicjZuNDh5NnBzamVpdjYwOWVzOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/ulZ7gQQz9jwZzv224n/giphy.gif" alt="banner" width="150">
-</div>
-   <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3BmNGFiaWM3MnBzODh1MzNlcDhheDU5MG04Znhja25pdms3aXB0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/137EaR4vAOCn1S/giphy.gif" alt="banner" >
+# 🌐 ContriSpace  
 
-# Open Source Contribution Guide 🚀  
-
-Welcome to **DemoRepo** ! We’re excited to have you contribute to this open-source project. Whether you're adding new features, or adding your own cards, your contributions are valuable.  
-
-This guide will help you fork, clone, modify, and submit a **Pull Request (PR)** to contribute effectively. Follow the steps below to get started and become a part of our open-source community. Happy coding! 🎉  
+Welcome to **ContriSpace** – a simple space for your open-source contributions 🚀.  
+This project is designed to help **first-time contributors** practice adding their details in a card template and get comfortable with the GitHub workflow.  
 
 ---
 
+## 📌 Prerequisites  
+Before contributing, make sure you have:  
+- A GitHub account ✅  
+- Git installed on your system ([Download Git](https://git-scm.com/))  
+- A code editor like [VS Code](https://code.visualstudio.com/)  
 
-## **STEPS TO CONTRIBUTE**
+---
 
-### **Step 1: Fork the Repository**    
-1. Click the **Fork** button (top-right corner).  
-2. This creates a copy of the repository under your GitHub account.  
+## 🛠️ How to Contribute  
 
-### **Step 2: Clone the Forked Repository**  
-1. Navigate to your forked repository on GitHub.  
-2. Click the **Code** button and copy the HTTPS or SSH link.  
-3. Open a terminal or Git Bash and run:  
+Follow these steps to contribute to **ContriSpace**:  
 
-   ```bash
-   git clone "https://github.com/RAj2027/ContributeToThisRepo.git"
-   ```  
-4. Navigate into the cloned repository:  
-   ```bash
-   cd repository-name
-   ```
+### Step 1: Fork this Repository  
+- Click the **Fork** button at the top right of this repository to create a copy under your GitHub account.  
 
-### **Step 3: Create a New Branch**  
-1. Create a new branch for your changes:  
-   ```bash
-   git branch new_branch
-   ```
-2. Switch to the new_branch
-   ```bash
-   git switch new_branch
-   ```
+### Step 2: Open Command Prompt/Terminal  
+- Navigate to your Desktop (or preferred directory):  
+  ```bash
+  cd Desktop
+  ```
 
-### **Step 4: Make Your Changes**  
-1. Edit the necessary files [index.html] using an editor (e.g., VS Code, Vim, etc.).  
-2. After making changes, check the modified files:  
-   ```bash
-   git status
-   ```
-3. Add the changes to the staging area:  
-   ```bash
-   git add .
-   ```
-4. Commit the changes with a message:  
-   ```bash
-   git commit -m "Describe your changes"
-   ```
+### Step 3: Clone your Fork  
+- Clone the repository to your local system:  
+  ```bash
+  git clone https://github.com/<your-username>/ContributeToThisRepo.git
+  ```
 
-### **Step 5: Push Changes to Your Fork**  
-1. Push your branch to your forked repository:  
-   ```bash
-   git push origin feature-branch-name
-   ```
+### Step 4: Open Project in your IDE  
+- Go inside the project folder:  
+  ```bash
+  cd ContributeToThisRepo
+  ```
+- Open it in VS Code or your preferred IDE:  
+  ```bash
+  code .
+  ```
 
-### **Step 6: Create a Pull Request (PR)**  
-1. Go to your forked repository on GitHub.  
-2. You will see a **Compare & pull request** button—click it.  
-3. Add a title and description explaining your changes.  
-4. Select the target branch (usually `main` or `develop`) in the original repository.  
-5. Click **Create pull request**.  
+### Step 5: Add Your Contribution  
+- Open the `index.html` file.  
+- Copy the **card template** provided inside the `cards-section`.  
+- Paste it below the existing cards.  
+- Update it with your **Name, Resource, and Social Links**.  
 
-Now you've successfully contributed to the repository! 🚀
-<div>
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW85b2ozcWs4c3l3M3BsaW9jMXp3d2x3ZmlxNm9tYWdzeDZucW9obSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/p8dZhDrFsLUxxjsJ7K/giphy.gif" alt="Completion" width="300px">
+### Step 6: Stage and Commit Changes  
+```bash
+git add .
+git commit -m "Added my contributor card"
+```
 
-<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmRhbXdnNmFmM3g3NzJpMTI1MDJ0Znk3YXZkbzBiMmJoa3libmtldiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/V5km8jjklLgIARIyTb/giphy.gif" alt="banner" width="180px" style="margin-left: 24px;">
-</div>
+### Step 7: Push Changes to GitHub  
+```bash
+git push origin main
+```
+
+### Step 8: Done! 🎉  
+- Your contribution is now live on **ContriSpace** 🚀  
+- Refresh the site to see your contributor card!  
+
+---
+## 📊 Project Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/69c2c215cd293f74ae0a5b1bfe0d3bb6472db223.svg "Repobeats analytics image") 
+
+## 🌟 Show Some Love  
+If you like this project, don’t forget to **star ⭐ the repo** and share it with your friends!  
+
