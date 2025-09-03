@@ -108,17 +108,17 @@ p {
     /* allow children to shrink so ellipsis can appear */
 }
 
-#name {
+.name {
     font-size: 22px;
     font-weight: bolder;
 }
 
-#resource {
+.resource {
     font-weight: bolder;
     margin-left: 20px;
 }
 
-#socials {
+.socials {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,7 +129,7 @@ a {
     text-decoration: none;
 }
 
-button {
+.button {
     margin-top: 2vh;
     margin: 1vw;
     font-size: 1rem;
@@ -144,7 +144,7 @@ button {
     box-shadow: -5px 5px 0px 0px rgb(30, 30, 30);
 }
 
-button:hover {
+.button:hover {
     transform: translate(5px, -5px);
 }
 
