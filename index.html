@@ -7,13 +7,25 @@
         <link
             href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
             rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./script.js"></script>
         <style>
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 </style>
     </head>
     <body>
+        <!-- Top navigation: simple typography logo (left) and contributions counter (right) -->
+        <nav class="top-nav" role="navigation" aria-label="Main">
+            <div class="nav-inner">
+                <div class="nav-left">
+                    <a href="#heading" class="nav-logo">ContriSpace </a>
+                </div>
+                <div class="nav-right" aria-live="polite">
+                    <span class="contrib-label">Contributions so far</span>
+                    <span class="contrib-count" id="contrib-count">0</span>
+                </div>
+            </div>
+        </nav>
         <div class="hero-section">
             <div class="content">
                 <h1 id="heading">Contribute to this Project</h1>
@@ -23,8 +35,13 @@
                     participate in a simple and easy project. Get more
                     comfortable using GitHub and make your first open source
                     contribution. It's quick and easy.</p>
-                <a href="https://github.com/RAj2027/ContributeToThisRepo"
-                    target="_blank" class="button">Guide to Contribution</a>
+                <div class="cta-row">
+                    <a href="https://github.com/RAj2027/ContributeToThisRepo"
+                        target="_blank" class="button">Guide to Contribution</a>
+                    <button id="theme-toggle" class="button small" aria-pressed="false" aria-label="Toggle dark mode">
+                        <span class="theme-icon" aria-hidden="true">&#9775;</span>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="cards-section">
@@ -67,7 +84,7 @@
         </div>
         <div class="footer-section">
             <div class="left-sec">
-                <h1 class="logo"><a id="logo" href="https://raj2027.github.io/ContributeToThisRepo" target="_blank">ContriSpace</a><i class="ri-arrow-right-up-line"></i></h1>
+                <h1 class="logo"><a id="logo" href="https://raj2027.github.io/ContributeToThisRepo" target="_blank">ContriSpace</a><i class="ri-arrow-right-up-line" id="arrow-right-up"></i></h1>
                 <h3>A simple space for open-source contributions</h3>
             </div>
             <div class="right-sec">

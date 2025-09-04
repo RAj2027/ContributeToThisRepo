@@ -6,8 +6,11 @@
 
 :root {
     --font-color: rgb(34, 34, 34);
+    --muted-color: rgba(34, 34, 34, 0.75);
     --bg-color: rgb(253, 253, 253);
     --font-style: 'Funnel Display', sans-serif;
+    --button-text-color: #ffffff;
+    --accent-color: #8b3dbd;
 }
 
 body {
@@ -21,6 +24,82 @@ body {
     min-height: 100vh;
     font-family: var(--font-style);
     padding: 2vw;
+}
+
+/* Smooth transitions for theme changes */
+html, body, .card, .button, .footer-section, .top-nav .nav-inner, .contrib-count, .nav-logo {
+    transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+/* Top navigation */
+.top-nav {
+    width: 100%;
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    justify-content: center;
+    z-index: 40;
+    pointer-events: auto;
+}
+
+.top-nav .nav-inner {
+    width: min(1100px, 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    backdrop-filter: blur(8px);
+    border: 3px solid rgb(31, 31, 31);
+    border-radius: 15px;
+}
+
+.nav-logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+}
+
+.contrib-label {
+    font-size: 1.2rem;
+    color: var(--muted-color);
+    font-weight: 700;
+}
+
+.contrib-count {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    padding: 0.2rem 0.6rem;
+    background: linear-gradient(90deg, #f2d9f8, #e6c9f0);
+    border: 3px solid rgb(31, 31, 31);
+    border-radius: 8px;
+    box-shadow: -3px 3px 0 rgba(14, 14, 14, 0.874);
+}
+
+@media (max-width: 700px) {
+    .nav-inner {
+        padding: 0.4rem;
+    }
+
+    .nav-logo {
+        font-size: 18px;
+    }
+
+    .contrib-label {
+        display: none;
+    }
 }
 
 .hero-section {
@@ -40,6 +119,20 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2vh;
+}
+
+.cta-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.6rem;
+}
+
+.cta-row .button { margin: 0; }
+.cta-row .button.small { margin-left: 0.6rem; box-shadow: -4px 4px 0 rgba(0, 0, 0); }
+
+@media (max-width: 700px) {
+    .cta-row { flex-direction: column; gap: 0.6rem; }
 }
 
 #heading {
@@ -76,7 +169,8 @@ p {
     box-sizing: border-box;
     width: 400px;
     height: 200px;
-    background-color: var(--bg-color);
+    background-color: transparent;
+    backdrop-filter: blur(6px);
     border: 3px solid rgb(33, 33, 33);
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
     backdrop-filter: blur(6px);
@@ -149,7 +243,7 @@ a {
     background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
     border: 3px solid rgb(31, 31, 31);
     border-radius: 1em;
-    color: #fff;
+    color: var(--button-text-color);
     font-weight: bolder;
     transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
     box-shadow: -5px 5px 0px 0px rgb(30, 30, 30);
@@ -160,7 +254,8 @@ a {
 }
 
 .footer-section {
-    background-color: var(--bg-color);
+    background-color: transparent;
+    backdrop-filter: blur(6px);
     height: auto;
     padding: 2vw 3vw;
     display: flex;
@@ -189,7 +284,7 @@ a {
 }
 
 .ri-arrow-right-up-line:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotateZ(45deg);
 }
 
 .right-sec {
@@ -208,3 +303,84 @@ a {
 i {
     font-size: 28px;
 }
+
+/* Theme toggle small variant */
+.button.small { padding: 0.6em 0.8em; font-size: 0.95rem; }
+
+/* Dark theme variables and overrides */
+:root[data-theme='dark'] {
+    --font-color: #e9e7ef;
+    --muted-color: rgba(233,231,239,0.75);
+    --bg-color: #15141a;
+    --button-text-color: #111118;
+    --accent-color: #cda7ff;
+}
+
+body[data-theme='dark'] {
+    /* Magenta orb grid background (matches provided JSX snippet) */
+    background: #020617;
+    background-image:
+        linear-gradient(to right, rgba(71,85,105,0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(71,85,105,0.15) 1px, transparent 1px),
+        radial-gradient(circle at 50% 60%, rgba(236,72,153,0.15) 0%, rgba(168,85,247,0.05) 40%, transparent 70%);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    background-repeat: repeat, repeat, no-repeat;
+    color: var(--font-color);
+}
+
+body[data-theme='dark'] .top-nav .nav-inner {
+    border-color: rgba(255,255,255,0.06);
+}
+
+body[data-theme='dark'] .card {
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 6px 6px 20px rgba(0,0,0,0.6);
+}
+
+body[data-theme='dark'] .button {
+    box-shadow: -3px 3px 0 rgba(0,0,0,0.6);
+    border-color: rgba(255,255,255,0.06);
+}
+
+/* small theme icon styling */
+.theme-icon { display: inline-block; transform-origin: center; transition: transform 220ms ease; }
+.theme-icon {
+  font-size: 1.5rem; /* or try 24px, 32px, etc. */
+  color: #111 !important;
+}
+body[data-theme='dark'] .theme-icon { color: #111 !important; }
+body[data-theme='dark'] .theme-icon { transform: rotate(-20deg) scale(1.05); }
+
+/* Light-tinted shadows for dark theme so elements keep depth */
+body[data-theme='dark'] .card {
+    box-shadow: 0 8px 24px rgba(255,255,255,0.04), 0 2px 6px rgba(255,255,255,0.02) inset;
+}
+body[data-theme='dark'] .button {
+    box-shadow: -4px 4px 0 rgba(255, 255, 255, 0.972);
+}
+body[data-theme='dark'] .footer-section,
+body[data-theme='dark'] .top-nav .nav-inner {
+    box-shadow: 0 8px 28px rgba(255,255,255,0.03);
+}
+body[data-theme='dark'] .contrib-count {
+    box-shadow: 0 4px 10px rgba(255,255,255,0.04), -3px 3px 0 rgba(255, 255, 255, 0.756);
+}
+
+/* Make borders visible in dark mode with a subtle white tint */
+body[data-theme='dark'] .card {
+    border-color: rgba(255, 255, 255, 0.802);
+}
+body[data-theme='dark'] .button {
+    border-color: rgb(11, 11, 11);
+}
+body[data-theme='dark'] .footer-section {
+    border-color: rgba(255, 255, 255, 0.802);
+}
+body[data-theme='dark'] .top-nav .nav-inner {
+    border-color: rgba(255, 255, 255, 0.802);
+}
+body[data-theme='dark'] .contrib-count {
+    border-color: rgb(17, 17, 17);
+}
+
+
